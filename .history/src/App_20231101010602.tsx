@@ -9,8 +9,7 @@ const App = () => {
         {/*Public Routes */}
         <Route path="/sign-in" element={<SigninForm />} />
 
-        {/*Private Routes */}
-        <Route index element={<Home />} />
+        {/* */}
       </Routes>
     </main>
   )
