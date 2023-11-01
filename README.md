@@ -1,28 +1,27 @@
-# React + TypeScript + Vite
+# GramSnap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Ongoing]
 
-Currently, two official plugins are available:
+This is a fullstack social media app based other social media apps such as "[Instagram](https://www.instagram.com/yasirgaji/)" and "[SnapChat](https://www.snapchat.com/?original_referrer=none)" built on [React + TypeScript + Vite](https://reactjs.org/) for the front-end,  [Appwrite](https://cloud.appwrite.io/register) as the backend, and [Tailwindcss CSS](https://tailwindcss.com/docs/guides/create-react-app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Other tools/technology and libraries used
 
-## Expanding the ESLint configuration
+ [Styled Component](https://styled-components.com/) - For styling |
+ [React Router](https://reactrouter.com/) & [React Router Dom V6](https://reactrouter.com/) - For routing
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## What I Learned
 
-- Configure the top-level `parserOptions` property like this:
+  1. Non Yet
+  <!-- 28. Testing using jest and react-testing-library -->
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+## Errors I Faced
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-# gramsnap
+  1.Non Yet
+
+  <!-- 5. "Firebase: A network AuthError (such as timeout, interrupted connection or unreachable host) has occurred. (auth/network-request-failed)." - This error was caused by the fact that I had not set up the firebase project for a production build and a development build. To fix this, I had to set up the firebase project for a production build and a development build. -->
+
+## Current Error
+  
+  1. Non Yet
+
+## [View Project](#)
