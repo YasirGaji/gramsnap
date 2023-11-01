@@ -5,7 +5,6 @@ import SigninForms from './_auth/forms/SigninForms';
 import SignupForms from './_auth/forms/SignupForms';
 import { Home } from './_root/pages';
 import AuthLayout from './_auth/AuthLayout';
-import RootLayout from './_root/RootLayout';
 
 
 
@@ -22,7 +21,7 @@ const App = () => {
 
 
         {/*Private Routes */}
-        <Route element={<RootLayout />}>
+        <Route element={<RootLay}>
           <Route index element={<Home />} />
         </Route>
       </Routes>
