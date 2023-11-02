@@ -11,7 +11,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
 ## What I Learned
 
-  1. Non Yet
+  1. How to set-up a vite package.
+  2. Hoe to use Shadcn package and Zod schema.
   <!-- 28. Testing using jest and react-testing-library -->
 
 ## Errors I Faced
