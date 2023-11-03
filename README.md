@@ -12,14 +12,17 @@ This is a fullstack social media app based other social media apps such as "[Ins
 ## What I Learned
 
   1. How to set-up a vite package.
-  2. Hoe to use Shadcn package and Zod schema.
+  2. How to use Shadcn package and Zod schema.
+  3. How to setup Appwrite for authentication and backend services.
   <!-- 28. Testing using jest and react-testing-library -->
 
-## Errors I Faced
+## Errors  I Faced
 
   1.Non Yet
 
-  <!-- 5. "Firebase: A network AuthError (such as timeout, interrupted connection or unreachable host) has occurred. (auth/network-request-failed)." - This error was caused by the fact that I had not set up the firebase project for a production build and a development build. To fix this, I had to set up the firebase project for a production build and a development build. -->
+  1. "Uncaught TypeError: Cannot read properties of undefined (reading 'replace')
+  at Client.setEndpoint (client.ts:120:93)
+  at config.ts:13:8" - This error was caused by the fact that I had not set up the firebase project for a production build and a development build. To fix this, I had to set up the firebase project for a production build and a development build.
 
 ## Current Error
   
