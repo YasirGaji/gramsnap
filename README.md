@@ -6,7 +6,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
 ## Other tools/technology and libraries used
 
- [Styled Component](https://styled-components.com/) - For styling |
+ [React-Query](https://tanstackquery.com/) - For data mutation |
  [React Router](https://reactrouter.com/) & [React Router Dom V6](https://reactrouter.com/) - For routing
 
 ## What I Learned
@@ -16,7 +16,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
   3. How to setup Appwrite for authentication and backend services.
   4. How to setup database, realtions and storage in appwrite
   5. How to use Toast from Shadcn
-  <!-- 28. Testing using jest and react-testing-library -->
+  6. How to setup and use Tanstack query (FKA React query) for auto caching, data fetching, data mutating, and infinite scrolling
+  
 
 ## Errors  I Faced
 
