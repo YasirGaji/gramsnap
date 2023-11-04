@@ -14,6 +14,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   1. How to set-up a vite package.
   2. How to use Shadcn package and Zod schema.
   3. How to setup Appwrite for authentication and backend services.
+  4. How to setup database, realtions and storage in appwrite
   <!-- 28. Testing using jest and react-testing-library -->
 
 ## Errors  I Faced
