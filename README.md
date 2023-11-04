@@ -17,8 +17,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
   4. How to setup database, realtions and storage in appwrite
   5. How to use Toast from Shadcn
   6. How to setup and use Tanstack query (FKA React query) for auto caching, data fetching, data mutating, and infinite scrolling
+  7. The use of the finally clause after the trycatch clause
   
-
 ## Errors  I Faced
 
   1.Non Yet
