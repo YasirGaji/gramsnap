@@ -22,7 +22,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
   1. "Uncaught TypeError: Cannot read properties of undefined (reading 'replace')
   at Client.setEndpoint (client.ts:120:93)
-  at config.ts:13:8" - This error was caused by the way I imported my env variables
+  at config.ts:13:8" - This error was caused by the way I imported my env variables and not naming my ENV file properly
 
 ## Current Error
   
