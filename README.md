@@ -21,11 +21,11 @@ This is a fullstack social media app based other social media apps such as "[Ins
   
 ## Errors  I Faced
 
-  1.Non Yet
-
   1. "Uncaught TypeError: Cannot read properties of undefined (reading 'replace')
   at Client.setEndpoint (client.ts:120:93)
   at config.ts:13:8" - This error was caused by the way I imported my env variables and not naming my ENV file properly
+
+  2. "Access to XMLHttpRequest at '<https://cloud.appwrite.io/v1/account>' from origin '<http://127.0.0.1:5173>' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value '<http://localhost:5173>' that is not equal to the supplied origin." - This error is caused by not using the appropriate url and also an error in the attribute naming from appwrite
 
 ## Current Error
   
