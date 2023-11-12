@@ -26,10 +26,6 @@ const SignupForms = () => {
   const { checkAuthUser, isLoading: isUserLoading } = useUserContext();
   const navigate = useNavigate();
 
-  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
-
-  const { mutateAsync: signInAccount, isPending: isSigningIn } = useSignInAccount();
-
 
   //Form definition 
   const form = useForm<z.infer<typeof SignupValidation>>({
@@ -42,8 +38,14 @@ const SignupForms = () => {
     },
   })
 
+
+  const { mutateAsync: createUserAccount, isPending: isCreatingAccount } = useCreateUserAccount();
+  const { mutateAsync: signInAccount, isPending: isSigningIn } = useSignInAccount();
+
+
   //Submit handler
   async function onSubmit(values: z.infer<typeof SignupValidation>) {
+    try { 
     const newUser = await createUserAccount(values);
 
 
@@ -71,6 +73,8 @@ const SignupForms = () => {
       navigate('/')
     } else {
       return toast({ title: 'Sign up failed. Please try again.' })
+    }} catch (error) {
+      console.log({ error })
     }
 
   }
