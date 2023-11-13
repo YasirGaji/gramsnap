@@ -18,6 +18,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   5. How to use Toast from Shadcn
   6. How to setup and use Tanstack query (FKA React query) for auto caching, data fetching, data mutating, and infinite scrolling
   7. The use of the finally clause after the trycatch clause.
+  8. How to use constants to declare links/LIs in react.
   
 ## Errors  I Faced
 
@@ -25,7 +26,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   at Client.setEndpoint (client.ts:120:93)
   at config.ts:13:8" - This error was caused by the way I imported my env variables and not naming my ENV file properly
 
-  2. "Access to XMLHttpRequest at '<https://cloud.appwrite.io/v1/account>' from origin '<http://127.0.0.1:5173>' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value '<http://localhost:5173>' that is not equal to the supplied origin." - This error is caused by not using the appropriate url and also an error in the attribute naming from appwrite
+  2. "Access to XMLHttpRequest at '<https://cloud.appwrite.io/v1/account>' from origin '<http://127.0.0.1:5173>' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value '<http://localhost:5173>' that is not equal to the supplied origin." - This error was caused by not using the appropriate url and also an error in the attribute naming from appwrite
 
 ## Current Error
   
