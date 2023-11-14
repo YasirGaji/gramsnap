@@ -14,27 +14,30 @@ import {
 import { Input } from "@/components/ui/input"
 import { Textarea } from "../ui/textarea";
 import FileUploader from "../shared/FileUploader";
+import { PostValidation } from "@/lib/validation";
+import { Models } from "appwrite";
 
 
 
-const formSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters."
-  }),
-})
+type PostFormProps = {
+  post?: Models.Document;
+}
 
-const PostForm = ({ post }) => {
+const PostForm = ({ post }: PostFormProps) => {
   // Form
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof PostValidation>>({
+    resolver: zodResolver(PostValidation),
     defaultValues: {
-      username: "",
+      caption: post ? post?.caption : "",
+      file: [],
+      location: post ? post?.location : "",
+      tags: post ? post?.tags.join(',') : ""
     },
   })
 
 
   // Submit Handler 
-  function onSubmit(values: z.infer<typeof formSchema>){
+  function onSubmit(values: z.infer<typeof PostValidation>){
     console.log(values)
   }
 
@@ -80,7 +83,7 @@ const PostForm = ({ post }) => {
               <FormItem>
                 <FormLabel className="shad-form_label">Add Location</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" />
+                  <Input type="text" className="shad-input" {...field} />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
@@ -94,7 +97,7 @@ const PostForm = ({ post }) => {
               <FormItem>
                 <FormLabel className="shad-form_label">Add Tags (Seperated by comma " , ")</FormLabel>
                 <FormControl>
-                  <Input type="text" className="shad-input" placeholder="Tech, Software, Engineering" />
+                  <Input type="text" className="shad-input" placeholder="Tech, Software, Engineering" {...field} />
                 </FormControl>
                 <FormMessage className="shad-form_message" />
               </FormItem>
