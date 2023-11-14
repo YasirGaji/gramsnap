@@ -19,6 +19,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   6. How to setup and use Tanstack query (FKA React query) for auto caching, data fetching, data mutating, and infinite scrolling
   7. The use of the finally clause after the trycatch clause.
   8. How to use constants to declare links/LIs as static code in react.
+  9. How to use React Dropzone.
   
 ## Errors  I Faced
 
