@@ -199,4 +199,6 @@ export async function getRecentPosts() {
   )
 
   if(!posts) throw Error;
+
+  return posts;
 }
