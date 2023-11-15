@@ -1,9 +1,9 @@
+import { useGetRecentPosts } from "@/lib/react-query/queriesAndMutations";
 import { Loader } from "lucide-react";
 
 
 const Home = () => {
-  const isPostLoading = true;
-  const posts = null;
+  const { data: posts, isPending: isPostLoading, isError: isErrorPosts } = useGetRecentPosts();
 
 
   return (
@@ -15,7 +15,9 @@ const Home = () => {
           {isPostLoading && !posts ? (
             <Loader />
           ) : (
-            <ul></ul>
+            <ul>
+              Posts
+            </ul>
           )}
         </div>
       </div>
