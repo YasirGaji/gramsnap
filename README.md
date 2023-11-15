@@ -29,8 +29,10 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
   2. "Access to XMLHttpRequest at '<https://cloud.appwrite.io/v1/account>' from origin '<http://127.0.0.1:5173>' has been blocked by CORS policy: The 'Access-Control-Allow-Origin' header has a value '<http://localhost:5173>' that is not equal to the supplied origin." - This error was caused by not using the appropriate url and also an error in the attribute naming from appwrite
 
+  3. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getRecentPosts"]" - 
+
 ## Current Error
   
-  1. Non Yet
+  1. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getRecentPosts"]"
 
 ## [View Project](https://yasirgaji.com)
