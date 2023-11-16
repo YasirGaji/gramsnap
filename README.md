@@ -20,6 +20,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   7. The use of the finally clause after the trycatch clause.
   8. How to use constants to declare links/LIs as static code in react.
   9. How to use React Dropzone.
+  10. How to use chatGPT to configure javascript functions for faster code execution.
   
 ## Errors  I Faced
 
