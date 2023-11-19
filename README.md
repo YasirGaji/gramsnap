@@ -32,6 +32,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
   3. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getRecentPosts"]" - This error was caused cause I did not return posts in the getRecentPosts async function
 
+  4. "Uncaught TypeError: newLikes.includes is not a function - in the PostStats component" - This error was as a result of me passing the "...likes" prop as an object instead of an array
+
 ## Current Error
   
   1. None yet
