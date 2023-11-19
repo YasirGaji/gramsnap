@@ -226,7 +226,7 @@ export async function savePost(postId: string, userId: string) {
       appwriteConfig.savesCollectionId,
       ID.unique(),
       {
-        user: userId,
+        users: userId,
         post: postId
       }
     )

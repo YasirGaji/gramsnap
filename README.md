@@ -21,6 +21,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
   8. How to use constants to declare links/LIs as static code in react.
   9. How to use React Dropzone.
   10. How to use chatGPT to configure javascript functions for faster code execution.
+  11. The Tanstack query optimistic update for instantaneous update
+  12. Automatic boolean assignment of replacing " ? true : false " with "!!" when making a function
   
 ## Errors  I Faced
 
@@ -33,6 +35,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
   3. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getRecentPosts"]" - This error was caused cause I did not return posts in the getRecentPosts async function
 
   4. "Uncaught TypeError: newLikes.includes is not a function - in the PostStats component" - This error was as a result of me passing the "...likes" prop as an object instead of an array
+
+  5. "Failed to load resource: the server responded with a status of 400 () - in the appwrite api file" - This was a result of passing "user" as a parameter in the savePost function instead of "users"
 
 ## Current Error
   
