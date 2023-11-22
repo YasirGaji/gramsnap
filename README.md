@@ -23,6 +23,7 @@ This is a fullstack social media app based other social media apps such as "[Ins
   10. How to use chatGPT to configure javascript functions for faster code execution.
   11. The Tanstack query optimistic update for instantaneous update
   12. Automatic boolean assignment of replacing " ? true : false " with "!!" when making a function
+  13. A better way to consume APIs
   
 ## Errors  I Faced
 
@@ -37,6 +38,8 @@ This is a fullstack social media app based other social media apps such as "[Ins
   4. "Uncaught TypeError: newLikes.includes is not a function - in the PostStats component" - This error was as a result of me passing the "...likes" prop as an object instead of an array
 
   5. "Failed to load resource: the server responded with a status of 400 () - in the appwrite api file" - This was a result of passing "user" as a parameter in the savePost function instead of "users"
+
+  6. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]" and "api.ts:260 GET <https://cloud.appwrite.io/v1/databases/6545fa049b47bad92847/collections/6545fa6e8bb145808a51/documents/undefined> 404 (Not Found) AppwriteException: Document with the requested ID could not be found."
 
 ## Current Error
   
