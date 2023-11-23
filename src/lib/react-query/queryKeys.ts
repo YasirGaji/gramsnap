@@ -1,5 +1,5 @@
 export enum QUERY_KEYS {
-  // AUTH KEYS
+  // AUTH KEY
   CREATE_USER_ACCOUNT = "createUserAccount",
 
   // USER KEYS
@@ -15,6 +15,6 @@ export enum QUERY_KEYS {
   GET_USER_POSTS = "getUserPosts",
   GET_FILE_PREVIEW = "getFilePreview",
 
-  //  SEARCH KEYS
+  //  SEARCH KEY
   SEARCH_POSTS = "getSearchPosts",
 }
