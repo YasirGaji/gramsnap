@@ -43,6 +43,6 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
 ## Current Error
   
-  1. None yet
+  1. "VM222:1 Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]"
 
 ## [View Project](https://yasirgaji.com)
