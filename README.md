@@ -39,10 +39,10 @@ This is a fullstack social media app based other social media apps such as "[Ins
 
   5. "Failed to load resource: the server responded with a status of 400 () - in the appwrite api file" - This was a result of passing "user" as a parameter in the savePost function instead of "users"
 
-  6. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]" and "api.ts:260 GET <https://cloud.appwrite.io/v1/databases/6545fa049b47bad92847/collections/6545fa6e8bb145808a51/documents/undefined> 404 (Not Found) AppwriteException: Document with the requested ID could not be found."
+  6. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]" and "api.ts:260 GET <https://cloud.appwrite.io/v1/databases/6545fa049b47bad92847/collections/6545fa6e8bb145808a51/documents/undefined> 404 (Not Found) AppwriteException: Document with the requested ID could not be found." - This error was caused due to the "id" rendered in the postCard component for the edit button function missing the "$" sign
 
 ## Current Error
   
-  1. "VM222:1 Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]" - Unable to fix
+  1. None yet
 
 ## [View Project](https://yasirgaji.com)

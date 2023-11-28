@@ -123,6 +123,7 @@ export const useGetCurrentUser = () => {
 }
 
 export const useGetPostById = (postId: string) => {
+  console.log({ postId })
   return useQuery({
     queryKey: [QUERY_KEYS.GET_POST_BY_ID, postId],
     queryFn: () => getPostById(postId),
@@ -130,4 +131,3 @@ export const useGetPostById = (postId: string) => {
   })
 }
 
- 
