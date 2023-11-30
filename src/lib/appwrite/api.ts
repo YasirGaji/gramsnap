@@ -276,31 +276,34 @@ export async function getPostById(postId?: string) {
 export async function updatePost(post: IUpdatePost) {
   const hasFileToUpdate = post.file.length > 0;
 
+
   try {
     let image = {
       imageUrl: post.imageUrl,
       imageId: post.imageId,
-    };
+    }
 
-    if (hasFileToUpdate) {
-      // Upload new file to appwrite storage
+    if(hasFileToUpdate) { 
+      // Upload file to appwrite storage
       const uploadedFile = await uploadFile(post.file[0]);
+
       if (!uploadedFile) throw Error;
 
-      // Get new file url
+      // Get file url
       const fileUrl = getFilePreview(uploadedFile.$id);
       if (!fileUrl) {
         await deleteFile(uploadedFile.$id);
         throw Error;
       }
 
-      image = { ...image, imageUrl: fileUrl, imageId: uploadedFile.$id };
+      image = { ...image, imageUrl: fileUrl, imageId: uploadedFile.$id }
     }
+
 
     // Convert tags into array
     const tags = post.tags?.replace(/ /g, "").split(",") || [];
 
-    //  Update post
+    // Create post
     const updatedPost = await databases.updateDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
@@ -315,20 +318,9 @@ export async function updatePost(post: IUpdatePost) {
       }
     );
 
-    // Failed to update
     if (!updatedPost) {
-      // Delete new file that has been recently uploaded
-      if (hasFileToUpdate) {
-        await deleteFile(image.imageId);
-      }
-
-      // If no new file uploaded, just throw error
-      throw Error;
-    }
-
-    // Safely delete old file after successful update
-    if (hasFileToUpdate) {
       await deleteFile(post.imageId);
+      throw Error;
     }
 
     return updatedPost;
@@ -337,27 +329,21 @@ export async function updatePost(post: IUpdatePost) {
   }
 }
 
-// ============================== DELETE POST
-export async function deletePost(postId?: string, imageId?: string) {
-  if (!postId || !imageId) return;
+export async function deletePost(postId: string, imageId: string) {
+  if(!postId || !imageId) throw Error;
 
   try {
-    const statusCode = await databases.deleteDocument(
+    await databases.deleteDocument(
       appwriteConfig.databaseId,
       appwriteConfig.postCollectionId,
       postId
-    );
+    )
 
-    if (!statusCode) throw Error;
-
-    await deleteFile(imageId);
-
-    return { status: "Ok" };
+    return { status: 'ok' }
   } catch (error) {
     console.log(error);
   }
 }
-
 
 
 
