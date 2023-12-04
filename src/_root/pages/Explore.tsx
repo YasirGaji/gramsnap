@@ -10,7 +10,7 @@ const Explore = () => {
   // const posts = [];
 
   // const shouldShowSearchResults = searchValue !== '';
-  // const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item.documents.length === 0)
+  // const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item.documents.length === 0å/*  */
 
 
 
