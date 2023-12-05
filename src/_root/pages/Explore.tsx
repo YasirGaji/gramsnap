@@ -1,4 +1,5 @@
 import GridPostList from "@/components/shared/GridPostList";
+import Loader from "@/components/shared/Loader";
 import SearchResults from "@/components/shared/SearchResults";
 import { Input } from "@/components/ui/input"
 import useDebounce from "@/hooks/useDebounce";
@@ -13,6 +14,15 @@ const Explore = () => {
   const [searchValue, setSearchValue] = useState('');
   const debouncedValue = useDebounce(searchValue, 500);
   const { data: searchPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue)
+
+
+  if(!posts) {
+    return (
+      <div className="flex-center w-full h-full">
+        <Loader />
+      </div>
+    )
+  }
 
 
   const shouldShowSearchResults = searchValue !== '';
@@ -62,7 +72,7 @@ const Explore = () => {
           <GridPostList key={`page-${index}`} posts={item.documents} />
         ))}
 
-        
+
       </div>
     </div>
   )
