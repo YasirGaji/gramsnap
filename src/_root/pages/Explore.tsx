@@ -1,21 +1,22 @@
 import GridPostList from "@/components/shared/GridPostList";
 import SearchResults from "@/components/shared/SearchResults";
 import { Input } from "@/components/ui/input"
+import useDebounce from "@/hooks/useDebounce";
 import { searchPosts } from "@/lib/appwrite/api";
-import { useSearchPosts } from "@/lib/react-query/queriesAndMutations";
+import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
 import { useState } from "react"
 
 
 const Explore = () => {
+  const { data: posts, fetchNextPage, hasNextPage } = useGetPosts();
+
   const [searchValue, setSearchValue] = useState('');
+  const debouncedValue = useDebounce(searchValue, 500);
+  const { data: searchPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue)
 
-  const { data: searchPosts, isFetching: isSearchFetching } = useSearchPosts(searchValue)
 
-  // const posts = [];
-
-  // const shouldShowSearchResults = searchValue !== '';
-  // const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item.documents.length === 0)å/*  */
-
+  const shouldShowSearchResults = searchValue !== '';
+  const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item.documents.length === 0)
 
 
   return (
@@ -51,13 +52,17 @@ const Explore = () => {
       </div>
 
       <div className="flex flex-wrap gap-9 w-full max-w-5xl">
-        {/* {shouldShowSearchResults ? (
+
+
+        {shouldShowSearchResults ? (
           <SearchResults />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : posts.pages.map((item, index) => (
           <GridPostList key={`page-${index}`} posts={item.documents} />
-        ))} */}
+        ))}
+
+        
       </div>
     </div>
   )
