@@ -124,6 +124,7 @@ export async function createPost(post: INewPost) {
         creator: post.userId,
         caption: post.caption,
         imageUrl: fileUrl,
+        postId: '',
         imageId: uploadedFile.$id,
         location: post.location,
         tags: tags,

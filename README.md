@@ -2,7 +2,7 @@
 
 [Ongoing]
 
-This is a fullstack social media app based other social media apps such as "[Instagram](https://www.instagram.com/yasirgaji/)" and "[SnapChat](https://www.snapchat.com/?original_referrer=none)" built on [React + TypeScript + Vite](https://reactjs.org/) for the front-end,  [Appwrite](https://cloud.appwrite.io/register) as the backend, and [Tailwindcss CSS](https://tailwindcss.com/docs/guides/create-react-app)
+This is a fullstack social media app based on other social media apps such as "[Instagram](https://www.instagram.com/yasirgaji/)" and "[SnapChat](https://www.snapchat.com/?original_referrer=none)" built on [React + TypeScript + Vite](https://reactjs.org/) for the front-end,  [Appwrite](https://cloud.appwrite.io/register) as the backend, and [Tailwindcss CSS](https://tailwindcss.com/docs/guides/create-react-app) for styling.
 
 ## Other tools/technology and libraries used
 
