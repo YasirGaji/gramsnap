@@ -5,8 +5,16 @@ import SearchResults from "@/components/shared/SearchResults";
 import { Input } from "@/components/ui/input"
 import useDebounce from "@/hooks/useDebounce";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
+import { Models } from "appwrite";
 import { useEffect, useState } from "react"
 import { useInView } from 'react-intersection-observer'
+
+
+
+
+type Explore = {
+  posts?: Models.Document[] | undefined;
+}
 
 
 const Explore = () => {
@@ -94,4 +102,4 @@ const Explore = () => {
   )
 }
 
-export default Explore
+export default Explore;
