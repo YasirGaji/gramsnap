@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import SearchResults from "@/components/shared/SearchResults";
@@ -14,7 +15,8 @@ const Explore = () => {
 
   const [searchValue, setSearchValue] = useState('');
   const debouncedValue = useDebounce(searchValue, 500);
-  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue)
+  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue);
+
 
   useEffect(() => {
     if(inView && !searchValue) fetchNextPage();
@@ -72,7 +74,7 @@ const Explore = () => {
         {shouldShowSearchResults ? (
           <SearchResults
             isSearchFetching={isSearchFetching}
-            searchedPosts={searchedPosts}
+            searchedPosts = {searchedPosts}
           />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>

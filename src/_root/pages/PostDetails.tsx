@@ -15,6 +15,8 @@ const PostDetails = () => {
   const handleDeletePost = () => {}
 
 
+
+
   return (
     <div className="post_details-container">
       {isPending ? <Loader /> : (
