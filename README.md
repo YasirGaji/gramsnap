@@ -24,6 +24,7 @@ This is a fullstack social media app based on other social media apps such as "[
   11. The Tanstack query optimistic update for instantaneous update
   12. Automatic boolean assignment of replacing " ? true : false " with "!!" when making a function
   13. A better way to consume APIs
+  14. How to debugg vite build errors
   
 ## Errors  I Faced
 
@@ -43,6 +44,6 @@ This is a fullstack social media app based on other social media apps such as "[
 
 ## Current Error
   
-  1. None yet
+  1. 7 Build Errors
 
 ## [View Project](https://yasirgaji.com)
