@@ -15,6 +15,18 @@ import { useInView } from 'react-intersection-observer'
 type Explore = {
   posts?: Models.Document[] | undefined;
 }
+const convertDocumentListToArray = (documentList?: Models.DocumentList<Models.Document>): Models.Document[] | undefined => {
+  if (!documentList) return undefined;
+
+  let documentsArray: Models.Document[] = [];
+  for (let i = 0; i < documentList.total; i++) {
+    const document = documentList.documents[i]; 
+    if (document) documentsArray.push(document);
+  }
+
+  return documentsArray;
+};
+
 
 
 const Explore = () => {
@@ -42,6 +54,8 @@ const Explore = () => {
 
   const shouldShowSearchResults = searchValue !== '';
   const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item?.documents.length === 0)
+
+  const convertedSearchedPosts = convertDocumentListToArray(searchedPosts);
 
 
   return (
@@ -81,9 +95,9 @@ const Explore = () => {
 
         {shouldShowSearchResults ? (
           <SearchResults
-            isSearchFetching={isSearchFetching}
-            searchedPosts = {searchedPosts}
-          />
+          isSearchFetching={isSearchFetching}
+          searchedPosts={convertedSearchedPosts}
+        />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : posts.pages.map((item, index) => (
