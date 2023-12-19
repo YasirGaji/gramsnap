@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react-hooks/exhaustive-deps */
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
@@ -12,8 +13,9 @@ import { useInView } from 'react-intersection-observer'
 
 
 
-type Explore = {
+type exploreProps = {
   posts?: Models.Document[] | undefined;
+  searchedPosts?: string | undefined;
 }
 const convertDocumentListToArray = (documentList?: Models.DocumentList<Models.Document>): Models.Document[] | undefined => {
   if (!documentList) return undefined;
