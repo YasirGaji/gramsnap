@@ -13,14 +13,10 @@ import { useInView } from 'react-intersection-observer'
 
 
 
-type exploreProps = {
-  posts?: Models.Document[] | undefined;
-  searchedPosts?: string | undefined;
-}
 const convertDocumentListToArray = (documentList?: Models.DocumentList<Models.Document>): Models.Document[] | undefined => {
   if (!documentList) return undefined;
 
-  let documentsArray: Models.Document[] = [];
+  const documentsArray: Models.Document[] = [];
   for (let i = 0; i < documentList.total; i++) {
     const document = documentList.documents[i]; 
     if (document) documentsArray.push(document);
@@ -98,7 +94,7 @@ const Explore = () => {
         {shouldShowSearchResults ? (
           <SearchResults
           isSearchFetching={isSearchFetching}
-          searchedPosts={convertedSearchedPosts}
+          searchedPosts = {convertedSearchedPosts}
         />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
