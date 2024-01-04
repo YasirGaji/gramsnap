@@ -42,8 +42,15 @@ This is a fullstack social media app based on other social media apps such as "[
 
   6. "Query data cannot be undefined. Please make sure to return a value other than undefined from your query function. Affected query key: ["getPostById","undefined"]" and "api.ts:260 GET <https://cloud.appwrite.io/v1/databases/6545fa049b47bad92847/collections/6545fa6e8bb145808a51/documents/undefined> 404 (Not Found) AppwriteException: Document with the requested ID could not be found." - This error was caused due to the "id" rendered in the postCard component for the edit button function missing the "$" sign
 
+  7. "Type 'DocumentList<Document> | undefined' is not assignable to type 'Document[] | undefined'.
+  Type 'DocumentList<Document>' is missing the following properties from type 'Document[]': length, pop, push, concat, and 29 more.searchedPosts = {searchedPosts}" - This was a build error fixed by intoducing a convert function
+
+  8. "[{ "resource": "/Users/yasirl/Desktop/Build/gramsnap/src/_root/pages/PostDetails.tsx", "owner": "typescript", "code": "2345", "severity": 8, "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.\n Type 'undefined' is not assignable to type 'string'.", "source": "ts", "startLineNumber": 46, "startColumn": 41, "endLineNumber": 46, "endColumn": 57 }]" - This is a build error in the postDetails page, easily solved by setting "id as a string" in the useGetPostById declaration and issued a condition for the unavailability of a post
+
+  9. "[{ "resource": "/Users/yasirl/Desktop/Build/gramsnap/src/components/shared/SearchResults.tsx", "owner": "typescript", "code": "2339", "severity": 8, "message": "Property 'documents' does not exist on type 'Document[]'.", "source": "ts", "startLineNumber": 15, "startColumn": 37, "endLineNumber": 15, "endColumn": 46 }]" - This is a build error from the search results shared component was easily solved by changing the 'undefined' to 'any' in the searchedPosts type declaration.
+
 ## Current Error
   
-  1. 7 Build Errors
+  1. 1 Build Errors
 
 ## [View Project](https://yasirgaji.com)

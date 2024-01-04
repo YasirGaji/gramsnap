@@ -1,11 +1,30 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable react-hooks/exhaustive-deps */
 import GridPostList from "@/components/shared/GridPostList";
 import Loader from "@/components/shared/Loader";
 import SearchResults from "@/components/shared/SearchResults";
 import { Input } from "@/components/ui/input"
 import useDebounce from "@/hooks/useDebounce";
 import { useGetPosts, useSearchPosts } from "@/lib/react-query/queriesAndMutations";
+import { Models } from "appwrite";
 import { useEffect, useState } from "react"
 import { useInView } from 'react-intersection-observer'
+
+
+
+
+const convertDocumentListToArray = (documentList?: Models.DocumentList<Models.Document>): Models.Document[] | undefined => {
+  if (!documentList) return undefined;
+
+  const documentsArray: Models.Document[] = [];
+  for (let i = 0; i < documentList.total; i++) {
+    const document = documentList.documents[i]; 
+    if (document) documentsArray.push(document);
+  }
+
+  return documentsArray;
+};
+
 
 
 const Explore = () => {
@@ -14,7 +33,8 @@ const Explore = () => {
 
   const [searchValue, setSearchValue] = useState('');
   const debouncedValue = useDebounce(searchValue, 500);
-  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue)
+  const { data: searchedPosts, isFetching: isSearchFetching } = useSearchPosts(debouncedValue);
+
 
   useEffect(() => {
     if(inView && !searchValue) fetchNextPage();
@@ -32,6 +52,8 @@ const Explore = () => {
 
   const shouldShowSearchResults = searchValue !== '';
   const shouldShowPosts = !shouldShowSearchResults && posts.pages.every((item) => item?.documents.length === 0)
+
+  const convertedSearchedPosts = convertDocumentListToArray(searchedPosts);
 
 
   return (
@@ -71,9 +93,9 @@ const Explore = () => {
 
         {shouldShowSearchResults ? (
           <SearchResults
-            isSearchFetching={isSearchFetching}
-            searchedPosts={searchedPosts}
-          />
+          isSearchFetching={isSearchFetching}
+          searchedPosts = {convertedSearchedPosts}
+        />
         ) : shouldShowPosts ? (
           <p className="text-light-4 mt-10 text-center w-full">End of posts</p>
         ) : posts.pages.map((item, index) => (
@@ -92,4 +114,4 @@ const Explore = () => {
   )
 }
 
-export default Explore
+export default Explore;

@@ -8,11 +8,19 @@ import { Link, useParams } from "react-router-dom";
 
 const PostDetails = () => {
   const { id } = useParams();
-  const { data: post, isPending } = useGetPostById(id || '');
+  const { data: post, isPending } = useGetPostById(id as string || ``);
   const { user } = useUserContext();
 
 
   const handleDeletePost = () => {}
+
+  if(!post) {
+    return (
+      <div className="flex-center w-full h-full">
+        <Loader />
+      </div>
+    )
+  }
 
 
   return (
@@ -46,9 +54,9 @@ const PostDetails = () => {
 
                     -
 
-                    <p className="subtle-semibold lg:small-regular">
+                    {/* <p className="subtle-semibold lg:small-regular">
                       {post?.location}
-                    </p>
+                    </p> */}
                   </div>
                 </div>
               </Link>

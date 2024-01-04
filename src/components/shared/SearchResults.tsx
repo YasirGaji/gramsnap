@@ -3,14 +3,14 @@ import Loader from "./Loader";
 import GridPostList from "./GridPostList";
 
 
-
 type SearchResultsProps = {
   isSearchFetching: boolean;
-  searchedPosts: Models.Document[];
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchedPosts: Models.Document[] | any;
 }
 
 
-const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultsProps) => {
+const SearchResults = ({ isSearchFetching, searchedPosts }: SearchResultsProps ) => {
   if(isSearchFetching) return <Loader />
 
   if(searchedPosts && searchedPosts.documents.length > 0) {
