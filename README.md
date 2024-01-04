@@ -45,8 +45,10 @@ This is a fullstack social media app based on other social media apps such as "[
   7. "Type 'DocumentList<Document> | undefined' is not assignable to type 'Document[] | undefined'.
   Type 'DocumentList<Document>' is missing the following properties from type 'Document[]': length, pop, push, concat, and 29 more.searchedPosts = {searchedPosts}" - This was a build error fixed by intoducing a convert function
 
+  8. "[{ "resource": "/Users/yasirl/Desktop/Build/gramsnap/src/_root/pages/PostDetails.tsx", "owner": "typescript", "code": "2345", "severity": 8, "message": "Argument of type 'string | undefined' is not assignable to parameter of type 'string'.\n Type 'undefined' is not assignable to type 'string'.", "source": "ts", "startLineNumber": 46, "startColumn": 41, "endLineNumber": 46, "endColumn": 57 }]" - This is a build error in the postDetails page, easily solved by setting "id as a string" in the useGetPostById declaration and issued a condition for the unavailability of a post
+
 ## Current Error
   
-  1. 7 Build Errors
+  1. 3 Build Errors
 
 ## [View Project](https://yasirgaji.com)
