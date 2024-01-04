@@ -15,7 +15,11 @@ const PostDetails = () => {
   const handleDeletePost = () => {}
 
   if(!post) {
-    return <Loader />
+    return (
+      <div className="flex-center w-full h-full">
+        <Loader />
+      </div>
+    )
   }
 
 

@@ -5,7 +5,8 @@ import GridPostList from "./GridPostList";
 
 type SearchResultsProps = {
   isSearchFetching: boolean;
-  searchedPosts: Models.Document[] | undefined;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  searchedPosts: Models.Document[] | any;
 }
 
 
