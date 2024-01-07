@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { INewPost, INewUser, IUpdatePost, } from "@/types";
 import { ID, Query } from 'appwrite';
 import { account, appwriteConfig, avatars, databases, storage } from "./config";
@@ -347,7 +348,7 @@ export async function deletePost(postId: string, imageId: string) {
 }
 
 export async function getInfinitePosts({ pageParam }: { pageParam: number }) {
-  const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(10)]
+  const queries: any[] = [Query.orderDesc('$updatedAt'), Query.limit(7)]
 
   if(pageParam) {
     queries.push(Query.cursorAfter(pageParam.toString()))
